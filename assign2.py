@@ -63,3 +63,6 @@ print(arr[0:,0:2])
 import numpy as np 
 arr=np.array([2,4,10,24,13,7])
 print(arr>5)
+
+
+
