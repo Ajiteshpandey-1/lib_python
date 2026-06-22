@@ -1,76 +1,77 @@
 # ques 1
 import pandas as pd
 df=pd.DataFrame({
-    'name':['aman','riya',None],
-    'age':[21,pd.NaT,25]
+    'name':['ajitesh','heer','ajay','rashi'],
+    'age':[20,22,21,22]
 })
-print(df.isna())
+print(df['name'])
+
 
 
 # ques 2
 df=pd.DataFrame({
-    'name':['aman',None,'raj'],
-    'age':[20,None,25]
+    'name':['ajitesh','heer','ajay','rashi'],
+    'marks':[20,22,21,19]
 })
-print(df.isnull().sum())
+print(df[['name','marks']])
 
 
 # ques 3
 df=pd.DataFrame({
-    'name':['aman','raj'],
-    'age':[20,None]
+    'name':['ajitesh','heer','ajay','rashi'],
+    'marks':[20,22,21,19]
 })
-df['age']=df['age'].fillna(df['age'].mean())
-print(df)
+print(df[df['marks']>20])
 
 
 # ques 4
 df=pd.DataFrame({
-    'city':['bpl',None],
-    'age':[20,None]
+    'name':['ajitesh','aman','ajay'],
+    'city':['bpl','anganbaadi','indore']
 })
-print(df['city'].fillna('unknown'))
+print(df[df['city']=='bpl'])
+
 
 
 # ques 5
 df=pd.DataFrame({
-    'name':['aman','raj'],
-    'age':[20,None]
+    'marks':[45,50,70,80,65]
 })
-print(df.dropna())
+print(df['marks'].max())
 
 
 # ques 6
 df=pd.DataFrame({
-    'age':[20,85,68]
+    'age':[20,22,21,22]
 })
-print(df['age'].astype(float))
+print(df['age'].min())
 
 
-# ques 7
+# ques 7 
 df=pd.DataFrame({
-    'city':['bpl','ind','delhi']
+    'marks':[45,50,70,80,65]
 })
-print(df['city'].replace('delhi','new delhi'))
+print(df['marks'].sort_values())
 
 
-# ques 8 
+# ques 8
 df=pd.DataFrame({
-    'score':[89,85,68]
+    'city':['bpl','anganbaadi','indore']
 })
-print(df['score'].replace(89,67))
+print(df['city'].value_counts())
 
 
 # ques 9 
 df=pd.DataFrame({
-    'age':[20,85,68],
-    'name':['aman','raj','rajjo']
+    'marks':[45,50,70],
+    'city':['bpl','anganbaadi','indore']
 })
-print(df.drop('age',axis=1))
+print(df.groupby('city')['marks'].mean())
+
 
 # ques 10 
 df=pd.DataFrame({
-    'age':[20,85,68],
-    'name':['aman','raj','rajjo']
+    'age':[20,22,21,22,35],
+    'marks':[45,50,70,80,65]
 })
-print(df.drop(index=1,axis=0))
+print(df[(df['marks']>70 ) & (df['age'] > 21)])
