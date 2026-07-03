@@ -7,7 +7,6 @@ df=pd.DataFrame({
 print(df['name'])
 
 
-
 # ques 2
 df=pd.DataFrame({
     'name':['ajitesh','heer','ajay','rashi'],
@@ -30,7 +29,6 @@ df=pd.DataFrame({
     'city':['bpl','anganbaadi','indore']
 })
 print(df[df['city']=='bpl'])
-
 
 
 # ques 5
